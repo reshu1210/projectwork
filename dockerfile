@@ -1,5 +1,6 @@
-From devopsedu/webapp
-Maintainer Eureka
-ADD https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war /usr/local/tomcat/webapps
-CMD "catalina.sh" "run"
+From devopsedu/webapp   // base image information
+MAINTAINER edureka
+RUN yum -y update            // these are commands that we give for building the image
+RUN yum install git -y		// information about packages that shoudl be 					there on the image
+VOLUME /data
 EXPOSE 8080
