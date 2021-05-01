@@ -8,3 +8,9 @@
     service: name=docker state=started
   - name: install git
     yum: name=git state=present
+ - name: get the dockerfile from githib
+   git: repo=https://github.com/reshu1210/projectwork.git dest=/tmp/gitrepo
+ - name: build dockerfile
+   command: chdir=/tmp/gitrepo docker build -t deployimage:ansible .
+ - name: run the dockerfile
+   command: docker run -itd -P deployimage:ansible
