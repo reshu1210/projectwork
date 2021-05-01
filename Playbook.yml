@@ -6,3 +6,5 @@
     yum: name=docker state=present
   - name: start docker
     service: name=docker state=started
+  - name: install git
+    yum: name=git state=present
